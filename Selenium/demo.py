@@ -1,14 +1,10 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
+def abs1():
+    assert abs(-42) == 42, "Should be absolute value of a number"
 
-browser = webdriver.Chrome()
-# говорим WebDriver ждать все элементы в течение 5 секунд
-browser.implicitly_wait(5)
+def abs2():
+    assert abs(-42) == -42, "Should be absolute value of a number"
 
-browser.get("http://suninjuly.github.io/wait2.html")
-
-button = browser.find_element(By.ID, "verify")
-button.click()
-message = browser.find_element(By.ID, "verify_message")
-
-assert "successful" in message.text
+if __name__ == "__main__":
+    abs1()
+    abs2()
+    print("Everything passed")
